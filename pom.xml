@@ -66,7 +66,7 @@
 			<artifactId>jdk.tools</artifactId>
 			<scope>system</scope>
 			<version>1.6</version>
-			<systemPath>/usr/local/jdk/lib/tools.jar</systemPath>
+			<systemPath>/usr/java/latest/lib/tools.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>

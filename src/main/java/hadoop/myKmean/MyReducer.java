@@ -25,7 +25,7 @@ public class MyReducer extends Reducer<Text, Text, Text, Text> {
 
 		Configuration conf = context.getConfiguration();
 		FileSystem fs = FileSystem.get(conf);
-		Path err = new Path("/kmean/err");
+		Path err = new Path("/user/phuoclh/kmean/err");
 		BufferedReader br = new BufferedReader(new InputStreamReader(fs.open(err)));
 		error = Double.parseDouble(br.readLine());
 		br.close();
@@ -49,7 +49,7 @@ public class MyReducer extends Reducer<Text, Text, Text, Text> {
 		double thisError = oldCentroid.distanceTo(newCentroid);
 		error += thisError;
 		
-		Path errOut = new Path("/kmean/err");
+		Path errOut = new Path("/user/phuoclh/kmean/err");
 		OutputStream name = fs.create(errOut);
 		BufferedWriter brOut = new BufferedWriter(new OutputStreamWriter(name));
 		brOut.write(error + "");

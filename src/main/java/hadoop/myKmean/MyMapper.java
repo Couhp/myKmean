@@ -37,7 +37,7 @@ public class MyMapper extends Mapper<Object, Text, Text, Text> {
 		}
 
 		else {
-			Path centroids = new Path("/kmean/out" + (loop - 1) + "/part-r-00000");
+			Path centroids = new Path("/user/phuoclh/kmean/out" + (loop - 1) + "/part-r-00000");
 			FileSystem fs = FileSystem.get(conf);
 			BufferedReader br = new BufferedReader(new InputStreamReader(fs.open(centroids)));
 			String line;

@@ -22,5 +22,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/hadoop/Downloads/parquet-common-1.0.1.jar.zip"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

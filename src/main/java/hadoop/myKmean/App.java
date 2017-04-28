@@ -27,8 +27,8 @@ public class App {
 		int iterator = 0;	//Counter for Loop of Jobs
 		double error = 0;		//Average error 
 		int number = 3;		//Number of Centroids
-		Path in = new Path("/kmean/input/data.txt");
-		Path center = new Path("/kmean/center");
+		Path in = new Path("/user/phuoclh/kmean/input/data.txt");
+		Path center = new Path("/user/phuoclh/kmean/center.txt");
 		boolean stop = false;
 		while (!stop) {
 			/*
@@ -47,7 +47,7 @@ public class App {
 			job.setReducerClass(MyReducer.class);
 			job.setJarByClass(MyMapper.class);
 			
-			Path out = new Path("/kmean/out" + iterator);
+			Path out = new Path("/user/phuoclh/kmean/out" + iterator);
 			FileSystem fs = FileSystem.get(conf);
 			if(fs.exists(out)) 
 				fs.delete(out, true);
@@ -60,7 +60,7 @@ public class App {
 			job.waitForCompletion(true);
 			
 
-			Path err = new Path("/kmean/err");
+			Path err = new Path("/user/phuoclh/kmean/err");
 			BufferedReader br = new BufferedReader(new InputStreamReader(fs.open(err)));
 			error = Double.parseDouble(br.readLine());
 			br.close();
@@ -68,7 +68,7 @@ public class App {
 			if(error < number * 10) 
 				stop = true;
 			
-			Path errOut = new Path("/kmean/err");
+			Path errOut = new Path("/user/phuoclh/kmean/err");
 			OutputStream name = fs.create(errOut);
 			BufferedWriter brOut = new BufferedWriter(new OutputStreamWriter(name));
 			brOut.write("0.0");
