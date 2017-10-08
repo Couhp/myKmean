@@ -1,2 +1,3 @@
-# myKmean
-This is KMean algorithm implements by hadoop
+# Kmean
+The implementation of KMeans for Hadoop.
+Build and run jar File in hadoop command line
